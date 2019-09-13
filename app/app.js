@@ -8,7 +8,7 @@ const dbName = 'mydb';
 
 const colName = 'product';
 
-const server = require('../server/server');
+const server = require('./server');
 
 
 // Create a new MongoClient
