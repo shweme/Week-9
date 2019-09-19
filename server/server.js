@@ -19,8 +19,11 @@ MongoClient.connect(url, { poolSize : 10, useNewUrlParser : true, useUnifiedTopo
 
     require('./routes/add.js')(db, app);
     require('./routes/getItem.js')(db, app, ObjectID);
+    require('./routes/getList.js')(db, app);
     require('./routes/update.js')(db, app, ObjectID);
     require('./routes/deleteItem.js')(db, app, ObjectID);
+    require('./routes/validID.js')(db, app);
+    require('./routes/prodCount.js')(db, app, ObjectID);
 
     require('./listen.js')(http);
 
