@@ -63,7 +63,7 @@ export class AddProductComponent implements OnInit {
   }
   addnewProduct(event){
     event.preventDefault();
-    if(this.productid ==null){
+    if(this.productid == null){
       this.iderrorshow = !this.iderrorshow;
     }else{
     this.newprod = new Products("",this.productid,this.productname,this.productunits);

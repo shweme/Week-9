@@ -14,7 +14,8 @@ export class ListProductsComponent implements OnInit {
   constructor(private proddata:ProductdataService,private router:Router,private socketservice:SocketsService) {}
   ngOnInit() {
       this.socketservice.initSocket();
-      this.socketservice.updatelist();
+      this.socketservice.update();
+
       //socket listening for an update to the list
        this.socketservice.onNewlist().subscribe((data)=>{
          this.products = data;
@@ -24,12 +25,10 @@ export class ListProductsComponent implements OnInit {
   deleteproduct(id){
     if (confirm("Are you sure you want to delete this item")){
       this.proddata.deleteItem(id).subscribe((data)=>{
-        if(data.ok ==1){
+          this.products = data;
           //request socket server to send an update
-          this.socketservice.updatelist();
+          //this.socketservice.update();
           this.socketservice.prodcount();
-      
-        }
       });
       
      

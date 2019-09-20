@@ -15,8 +15,8 @@ export class SocketsService {
     this.socket = socketIo(SERVER_URL);
 }
 
-updatelist() {
-  this.socket.emit('updatelist','list please');
+update() {
+  this.socket.emit('update','list please');
 }
 onNewlist(){
     let observable = new Observable(observer=>{

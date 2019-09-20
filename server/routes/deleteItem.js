@@ -7,7 +7,7 @@ module.exports = function(db, app, ObjectID) {
         let objectid = new ObjectID(productID);
         const collection = db.collection('products');
         collection.deleteOne({ _id:objectid}, (err, docs) => {
-            collection.find({}).toArray((err, datat) => {
+            collection.find({}).toArray((err, data) => {
                res.send(data);  
             });
            
