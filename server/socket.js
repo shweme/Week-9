@@ -3,7 +3,7 @@ module.exports = {
     connect: function(app, io,db){
       var messages =[];
         io.on('connect',(socket) => {
-            socket.on('updatelist',()=>{
+            socket.on('update',()=>{
               const collection = db.collection('products');
               collection.find({}).toArray((err,data)=>{
                 io.emit('newlist', data);

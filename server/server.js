@@ -7,6 +7,8 @@ const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
 let ObjectID = require('mongodb').ObjectID;
 
+const io = require('socket.io')(http);
+const sockets = require('./socket.js');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -16,6 +18,7 @@ MongoClient.connect(url, { poolSize : 10, useNewUrlParser : true, useUnifiedTopo
     
     const dbName = 'mydb';
     const db = client.db(dbName);
+    sockets.connect(app, io, db);
 
     require('./routes/add.js')(db, app);
     require('./routes/getItem.js')(db, app, ObjectID);

@@ -1,7 +1,7 @@
 module.exports = function(db,app,ObjectID){
     //Route to get a single item
     
-    app.post('/api/getitem',function(req,res){
+    app.post('/getItem',function(req,res){
       
       
         if (!req.body) {

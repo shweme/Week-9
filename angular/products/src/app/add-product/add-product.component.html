@@ -2,7 +2,7 @@
   <form (submit)="addnewProduct($event)">
   <div class="form-group">
     <label for="productid">Product ID</label>
-    <input type="number" class="form-control" id="productid" [(ngModel)]= "productid" (ngModelChange)="checkvaildid($event)" name="productid" placeholder="ID" >
+    <input type="number" class="form-control" id="productid" [(ngModel)]= "productid" (ngModelChange)="validID($event)" name="productid" placeholder="ID" >
    <div [@iderrorState]="stateName"  class="alert alert-warning" id="iderrormsg" role="alert">{{iderrormsg}} {{iderrormsg2}}</div>
   </div>
   <div class="form-group">

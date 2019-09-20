@@ -83,9 +83,9 @@ export class AddProductComponent implements OnInit {
     });
   }
 }
-checkvaildid(event){
+validID(event){
   this.noticeshow = false
-    this.proddata.checkvalidid(event).subscribe((data)=>{
+    this.proddata.validID(event).subscribe((data)=>{
     if (data.success == 0){
       this.iderrormsg2 =   " Something above " + data.topnum;
       this.iderrorshow = !this.iderrorshow;

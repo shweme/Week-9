@@ -23,7 +23,7 @@ export class ListProductsComponent implements OnInit {
   
   deleteproduct(id){
     if (confirm("Are you sure you want to delete this item")){
-      this.proddata.deleteitem(id).subscribe((data)=>{
+      this.proddata.deleteItem(id).subscribe((data)=>{
         if(data.ok ==1){
           //request socket server to send an update
           this.socketservice.updatelist();

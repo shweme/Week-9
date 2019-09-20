@@ -11,26 +11,26 @@ export class ProductdataService {
 
   }
   add(product:Products){
-    return this.http.post<any>('http://localhost:3000/api/add',  product );
+    return this.http.post<any>('http://localhost:3000/add',  product );
   }
-  getlist(){
-    return this.http.get<any>('http://localhost:3000/api/getlist');
+  getList(){
+    return this.http.get<any>('http://localhost:3000/getList');
   }
 
-  getitem(productID){
-    return this.http.post<any>('http://localhost:3000/api/getitem',  {'productid':productID} );
+  getItem(productID){
+    return this.http.post<any>('http://localhost:3000/getItem',  {'productid':productID} );
   }
-  updateitem(product:Products){
+  update(product:Products){
 
-    return this.http.post<any>('http://localhost:3000/api/update',  product );
+    return this.http.post<any>('http://localhost:3000/update',  product );
   }
-  deleteitem(productID){
-    return this.http.post<any>('http://localhost:3000/api/deleteitem',  {'productid':productID} );
+  deleteItem(productID){
+    return this.http.post<any>('http://localhost:3000/deleteItem',  {'productid':productID} );
   }
-  checkvalidid(productID){
-    return this.http.post<any>('http://localhost:3000/api/checkvalidid',  {'id':productID} );
+  validID(productID){
+    return this.http.post<any>('http://localhost:3000/validID',  {'id':productID} );
   }
   /*getproductcount(){
-    return this.http.get<any>('http://localhost:3000/api/prodcount');
+    return this.http.get<any>('http://localhost:3000/prodCount');
   }*/
 }
